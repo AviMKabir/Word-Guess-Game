@@ -4,64 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>HANGMAN GAME</title>
+    
 </head>
 <body>
     
 
-<script type="text/javascript">
-
-// word variable
-
-var words = ["boob"];
-
-// randomly pick a word
-
-var word = words[Math.floor(Math.random() * words.length)];
-
-
-// array for the answer blanks
-
-var answerArray = [];
-for (var i = 0; i < word.length; i++) {
-answerArray[i] = "_";
-}
-var remainingLetters = word.length;
-
-
-//key presses
-
-document.onkeyup = function(event) {
-
-
-
-var userGuess = event.key;
-
-
-// just pushing to the console to see the spaces which deos work
-// feel like we can just get user guess to be something and replace index?
-
-if (userGuess) {
-
-    console.log (answerArray.join(" "));
-    
-}
-
-
-
-    
-};
-
-
-
-
-
-
-
-
-
-
-</script>
+<script src="assets/javascript/game.js"></script>
 
 
 </body>
