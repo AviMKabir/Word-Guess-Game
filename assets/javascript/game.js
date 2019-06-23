@@ -8,7 +8,7 @@ function timedRefresh(timeoutPeriod) {
 
 // word variable
 
-var words = ["boob", "cactus"];
+var words = ["paramore"];
 var wrongLetter = 0;
 
 // randomly pick a word
@@ -459,7 +459,12 @@ document.onkeyup = function (event) {
 
     };
 
+if (word = "paramore") {
 
+
+    document.getElementById("hint").innerHTML = "hint: twlight banger";
+
+};
     
 
 
@@ -473,7 +478,7 @@ document.onkeyup = function (event) {
     document.getElementById("theWord").innerHTML = filledSpaces;
 
 
-    if (filledSpaces == "b o o b" || filledSpaces == "c a c t u s") {
+    if (filledSpaces == "p a r a m o r e" || filledSpaces == "c a c t u s") {
 
 
         console.log("correct! the word was " + word);
