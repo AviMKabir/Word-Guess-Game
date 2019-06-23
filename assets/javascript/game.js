@@ -1,3 +1,11 @@
+// this iis a function i am going to call so when the word is right it refreshes after 5 seconds
+// i found it online
+
+function timedRefresh(timeoutPeriod) {
+	setTimeout("location.reload(true);",timeoutPeriod);
+};
+
+
 // word variable
 
 var words = ["boob", "cactus"];
@@ -58,7 +66,7 @@ if (filledSpaces == "b o o b" || filledSpaces == "c a c t u s" ) {
 
     console.log("CORRECT! THE WORD WAS " + word);
 
-
+    javascript:timedRefresh(5000);
     
 
 }
