@@ -1,6 +1,6 @@
 // word variable
 
-var words = ["boob", "super", "balloon", "fantastic"];
+var words = ["boob", "cactus"];
 var wrongLetter = 0;
 
 // randomly pick a word
@@ -47,11 +47,21 @@ document.onkeyup = function (event) {
 
     };
 
+
+
     console.log(answerArray.join(" "));
 
-console.log("letters left: " + remainingLetters)
+var filledSpaces = answerArray.join(" ");
+
+if (filledSpaces == "b o o b" || filledSpaces == "c a c t u s" ) {
 
 
+    console.log("CORRECT! THE WORD WAS " + word);
+
+
+    
+
+}
 
     // The end of the game loop
 
