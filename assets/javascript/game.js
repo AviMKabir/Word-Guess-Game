@@ -1,6 +1,6 @@
 // word variable
 
-var words = ["boob"];
+var words = ["boob", "super", "balloon", "fantastic"];
 var wrongLetter = 0;
 
 // randomly pick a word
@@ -17,53 +17,44 @@ for (var i = 0; i < word.length; i++) {
     answerArray[i] = "_";
 };
 
-// showing lettes left
+// showing letters left
 var remainingLetters = word.length;
-
-
-
-
-//showing progress
-
-
-
 
 
 
 //key presses
 
-document.onkeyup = function(event) {
+document.onkeyup = function (event) {
 
 
 
     var userGuess = event.key;
 
 
+    // Get a guess from the player
 
 
-        // Show the player their progress alert(answerArray.join(" "));
+    if (userGuess) {
 
-        console.log(answerArray.join(" "));
-
-        // Get a guess from the player
-
-
-        if (userGuess) {
-
-            for (var j = 0; j < word.length; j++) {
-                if ( userGuess === word[j]) {
-                    answerArray[j] = userGuess; remainingLetters--;
-                }
+        for (var j = 0; j < word.length; j++) {
+            if (userGuess === word[j] && remainingLetters > 0) {
+                answerArray[j] = userGuess; remainingLetters--;
             }
 
+        }
 
 
-        };
 
-        
+    };
 
-        // The end of the game loop
-    
+    console.log(answerArray.join(" "));
+
+console.log("letters left: " + remainingLetters)
+
+
+
+    // The end of the game loop
+
 
 
 };
