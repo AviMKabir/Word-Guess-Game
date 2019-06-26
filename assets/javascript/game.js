@@ -10,6 +10,8 @@ function timedRefresh(timeoutPeriod) {
 
 var words = ["paramore"];
 var wrongLetter = 0;
+var guessesLeft = 6;
+
 
 // randomly pick a word
 
@@ -312,7 +314,7 @@ document.onkeyup = function (event) {
         showF();
 
     };
-    
+
     if (userGuess == "g") {
 
         showG();
@@ -390,7 +392,7 @@ document.onkeyup = function (event) {
         showS();
 
     };
-    
+
     if (userGuess == "t") {
 
         showT();
@@ -437,12 +439,6 @@ document.onkeyup = function (event) {
 
 
 
-
-
-
-
-
-
     // Get a guess from the player
 
 
@@ -450,23 +446,68 @@ document.onkeyup = function (event) {
 
         for (var j = 0; j < word.length; j++) {
             if (userGuess === word[j]) {
-                answerArray[j] = userGuess; remainingLetters--;
+                answerArray[j] = userGuess; 
+
             }
 
         }
-
-
-
     };
 
-if (word = "paramore") {
+    
+   // decrementing guesses for wrong letter omg the || isnt working im going crazy 
 
+    
+ if (word = "paramore" && userGuess !== "p") {
+    guessesLeft--;
+  }
+ 
 
-    document.getElementById("hint").innerHTML = "hint: twlight banger";
+  if (word = "paramore" && userGuess == "a") {
+    guessesLeft++;
+  }
+ 
+  if (word = "paramore" && userGuess == "r") {
+    guessesLeft++;
+  }
+    
+  if (word = "paramore" && userGuess == "m") {
+    guessesLeft++;
+  }
 
-};
+  if (word = "paramore" && userGuess == "o") {
+    guessesLeft++;
+  }
+    
+  if (word = "paramore" && userGuess == "e") {
+    guessesLeft++;
+  }
     
 
+  var guessesLeft2 = guessesLeft.toString();
+
+
+    console.log(guessesLeft2);
+ 
+
+
+
+
+    // pushing the guesses left
+    document.getElementById("guessesLeftDiv").innerHTML = "guesses left: " + guessesLeft;;
+
+    
+   
+    
+    
+
+
+// showing hints
+    if (word = "paramore") {
+
+
+        document.getElementById("hint").innerHTML = "hint: twlight banger";
+
+    };
 
 
     console.log(answerArray.join(" "));
@@ -477,6 +518,7 @@ if (word = "paramore") {
 
     document.getElementById("theWord").innerHTML = filledSpaces;
 
+// when you win its gonna refresh for now. i know i can make it just move up a variable through a loop too but i wanted to test this tefresh thing out
 
     if (filledSpaces == "p a r a m o r e" || filledSpaces == "c a c t u s") {
 
@@ -488,11 +530,19 @@ if (word = "paramore") {
 
     }
 
+    // this is the lose code
+
+    if (guessesLeft2 == "0") {
+
+
+        console.log("you have lost")
+    
+    }
+   
     // The end of the game loop
 
 
 
 };
-
 
 
