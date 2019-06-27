@@ -8,14 +8,16 @@ function timedRefresh(timeoutPeriod) {
 
 // word variable
 
-var words = ["paramore"];
+var words = ["paramore", "helena"];
 var wrongLetter = 0;
 var guessesLeft = 6;
-
+var k = 0
 
 // randomly pick a word
 
 var word = words[Math.floor(Math.random() * words.length)];
+
+console.log(word);
 
 
 // array for the answer blanks 
@@ -442,46 +444,69 @@ document.onkeyup = function (event) {
     // Get a guess from the player
 
 
-    if (userGuess) {
+    
 
         for (var j = 0; j < word.length; j++) {
-            if (userGuess === word[j]) {
-                answerArray[j] = userGuess; 
-
+             if (word[j] === userGuess) {
+             answerArray[j] = userGuess;
+             remainingLetters--;
+             }
             }
-
-        }
-    };
+    
 
     
    // decrementing guesses for wrong letter omg the || isnt working im going crazy 
 
-    
- if (word = "paramore" && userGuess !== "p") {
+   // for paramore
+
+   
+
+ if (word == "paramore" && userGuess !== "p") {
     guessesLeft--;
   }
  
 
-  if (word = "paramore" && userGuess == "a") {
+  if (word == "paramore" && userGuess == "a") {
     guessesLeft++;
   }
  
-  if (word = "paramore" && userGuess == "r") {
+  if (word == "paramore" && userGuess == "r") {
     guessesLeft++;
   }
     
-  if (word = "paramore" && userGuess == "m") {
+  if (word == "paramore" && userGuess == "m") {
     guessesLeft++;
   }
 
-  if (word = "paramore" && userGuess == "o") {
+  if (word == "paramore" && userGuess == "o") {
     guessesLeft++;
   }
     
-  if (word = "paramore" && userGuess == "e") {
+  if (word == "paramore" && userGuess == "e") {
     guessesLeft++;
   }
     
+// for helena
+
+  if (word == "helena" && userGuess !== "h") {
+    guessesLeft--;
+  }
+ 
+  if (word == "helena" && userGuess == "e") {
+    guessesLeft++;
+  }
+
+  if (word == "helena" && userGuess == "l") {
+    guessesLeft++;
+  }
+
+  if (word == "helena" && userGuess == "n") {
+    guessesLeft++;
+  }
+
+  if (word == "helena" && userGuess == "a") {
+    guessesLeft++;
+  }
 
   var guessesLeft2 = guessesLeft.toString();
 
@@ -502,12 +527,22 @@ document.onkeyup = function (event) {
 
 
 // showing hints
-    if (word = "paramore") {
+    if (word == "paramore") {
 
 
-        document.getElementById("hint").innerHTML = "hint: twlight banger";
+        document.getElementById("hint").innerHTML = "hint: past twlight banger / current feminist powerhouse";
 
     };
+
+    if (word == "helena") {
+
+
+        document.getElementById("hint").innerHTML = "hint: so long and goodnight";
+
+    };
+
+    
+    
 
 
     console.log(answerArray.join(" "));
@@ -518,16 +553,18 @@ document.onkeyup = function (event) {
 
     document.getElementById("theWord").innerHTML = filledSpaces;
 
-// when you win its gonna refresh for now. i know i can make it just move up a variable through a loop too but i wanted to test this tefresh thing out
+   
 
-    if (filledSpaces == "p a r a m o r e" || filledSpaces == "c a c t u s") {
+// when you win its gonna refresh for now. i know i can make it just move up a variable through a loop too but i wanted to test this refresh thing out
+
+    if (filledSpaces == "p a r a m o r e" || filledSpaces == "h e l e n a" ) {
 
 
         console.log("correct! the word was " + word);
 
-        javascript: timedRefresh(5000);
+        // javascript: timedRefresh(5000);
 
-
+        
     }
 
     // this is the lose code
