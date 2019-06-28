@@ -5,6 +5,7 @@ function timedRefresh(timeoutPeriod) {
     setTimeout("location.reload(true);", timeoutPeriod);
 };
 
+// jk i changed the code to loop to a random word each time 
 
 // word variable
 
@@ -281,7 +282,7 @@ document.onkeyup = function (event) {
 
 
 
-    var userGuess = event.key;
+    var userGuess = event.key.toLowerCase();
 
     console.log(wins);
 
@@ -450,97 +451,97 @@ document.onkeyup = function (event) {
     // Get a guess from the player
 
 
-    
-
-        for (var j = 0; j < word.length; j++) {
-             if (word[j] === userGuess) {
-             answerArray[j] = userGuess;
-             remainingLetters--;
-             }
-            }
-    
-
-    
-   // decrementing guesses for wrong letter omg the || isnt working im going crazy 
-
-   // for paramore
-
-   
-
- if (word == "paramore" && userGuess !== "p") {
-    guessesLeft--;
-  }
- 
-
-  if (word == "paramore" && userGuess == "a") {
-    guessesLeft++;
-  }
- 
-  if (word == "paramore" && userGuess == "r") {
-    guessesLeft++;
-  }
-    
-  if (word == "paramore" && userGuess == "m") {
-    guessesLeft++;
-  }
-
-  if (word == "paramore" && userGuess == "o") {
-    guessesLeft++;
-  }
-    
-  if (word == "paramore" && userGuess == "e") {
-    guessesLeft++;
-  }
-    
-// for helena
-
-  if (word == "helena" && userGuess !== "h") {
-    guessesLeft--;
-  }
- 
-  if (word == "helena" && userGuess == "e") {
-    guessesLeft++;
-  }
-
-  if (word == "helena" && userGuess == "l") {
-    guessesLeft++;
-  }
-
-  if (word == "helena" && userGuess == "n") {
-    guessesLeft++;
-  }
-
-  if (word == "helena" && userGuess == "a") {
-    guessesLeft++;
-  }
 
 
-// maria letters
-
-if (word == "maria" && userGuess !== "m") {
-    guessesLeft--;
-  }
-
-
-  if (word == "maria" && userGuess == "a") {
-    guessesLeft++;
-  }
+    for (var j = 0; j < word.length; j++) {
+        if (word[j] === userGuess) {
+            answerArray[j] = userGuess;
+            remainingLetters--;
+        }
+    }
 
 
-  if (word == "maria" && userGuess == "r") {
-    guessesLeft++;
-  }
+
+    // decrementing guesses for wrong letter omg the || isnt working im going crazy 
+
+    // for paramore
 
 
-  if (word == "maria" && userGuess == "i") {
-    guessesLeft++;
-  }
 
-  var guessesLeft2 = guessesLeft.toString();
+    if (word == "paramore" && userGuess !== "p") {
+        guessesLeft--;
+    }
+
+
+    if (word == "paramore" && userGuess == "a") {
+        guessesLeft++;
+    }
+
+    if (word == "paramore" && userGuess == "r") {
+        guessesLeft++;
+    }
+
+    if (word == "paramore" && userGuess == "m") {
+        guessesLeft++;
+    }
+
+    if (word == "paramore" && userGuess == "o") {
+        guessesLeft++;
+    }
+
+    if (word == "paramore" && userGuess == "e") {
+        guessesLeft++;
+    }
+
+    // for helena
+
+    if (word == "helena" && userGuess !== "h") {
+        guessesLeft--;
+    }
+
+    if (word == "helena" && userGuess == "e") {
+        guessesLeft++;
+    }
+
+    if (word == "helena" && userGuess == "l") {
+        guessesLeft++;
+    }
+
+    if (word == "helena" && userGuess == "n") {
+        guessesLeft++;
+    }
+
+    if (word == "helena" && userGuess == "a") {
+        guessesLeft++;
+    }
+
+
+    // maria letters
+
+    if (word == "maria" && userGuess !== "m") {
+        guessesLeft--;
+    }
+
+
+    if (word == "maria" && userGuess == "a") {
+        guessesLeft++;
+    }
+
+
+    if (word == "maria" && userGuess == "r") {
+        guessesLeft++;
+    }
+
+
+    if (word == "maria" && userGuess == "i") {
+        guessesLeft++;
+    }
+
+    var guessesLeft2 = guessesLeft.toString();
 
 
     console.log(guessesLeft2);
- 
+
 
 
 
@@ -548,13 +549,13 @@ if (word == "maria" && userGuess !== "m") {
     // pushing the guesses left
     document.getElementById("guessesLeftDiv").innerHTML = "guesses left: " + guessesLeft;;
 
-    
-   
-    
-    
 
 
-// showing hints
+
+
+
+
+    // showing hints
     if (word == "paramore") {
 
 
@@ -575,7 +576,7 @@ if (word == "maria" && userGuess !== "m") {
         document.getElementById("hint").innerHTML = "hint: count her in";
 
     };
-    
+
 
 
     console.log(answerArray.join(" "));
@@ -586,16 +587,45 @@ if (word == "maria" && userGuess !== "m") {
 
     document.getElementById("theWord").innerHTML = filledSpaces;
 
-   
 
-// when you win its gonna refresh for now. i know i can make it just move up a variable through a loop too but i wanted to test this refresh thing out
 
-    if (filledSpaces == "p a r a m o r e" || filledSpaces == "h e l e n a" || filledSpaces == "m a r i a"  ) {
+    // when you win its gonna refresh for now. i know i can make it just move up a variable through a loop too but i wanted to test this refresh thing out
+
+    if (filledSpaces == "p a r a m o r e" || filledSpaces == "h e l e n a" || filledSpaces == "m a r i a") {
 
 
         alert("correct! the word was " + word);
 
         alert("press any key for the next word :)");
+
+        // emptying the letters oh man
+
+        document.getElementById("letter1").innerHTML = " ";
+        document.getElementById("letter2").innerHTML = " ";
+        document.getElementById("letter4").innerHTML = " ";
+        document.getElementById("letter5").innerHTML = " ";
+        document.getElementById("letter6").innerHTML = " ";
+        document.getElementById("letter7").innerHTML = " ";
+        document.getElementById("letter8").innerHTML = " ";
+        document.getElementById("letter9").innerHTML = " ";
+        document.getElementById("letter10").innerHTML = " ";
+        document.getElementById("letter11").innerHTML = " ";
+        document.getElementById("letter12").innerHTML = " ";
+        document.getElementById("letter13").innerHTML = " ";
+        document.getElementById("letter14").innerHTML = " ";
+        document.getElementById("letter15").innerHTML = " ";
+        document.getElementById("letter16").innerHTML = " ";
+        document.getElementById("letter17").innerHTML = " ";
+        document.getElementById("letter18").innerHTML = " ";
+        document.getElementById("letter19").innerHTML = " ";
+        document.getElementById("letter20").innerHTML = " ";
+        document.getElementById("letter21").innerHTML = " ";
+        document.getElementById("letter22").innerHTML = " ";
+        document.getElementById("letter23").innerHTML = " ";
+        document.getElementById("letter24").innerHTML = " ";
+        document.getElementById("letter25").innerHTML = " ";
+        document.getElementById("letter26").innerHTML = " ";
+
 
         wins++;
 
@@ -607,10 +637,10 @@ if (word == "maria" && userGuess !== "m") {
 
         answerArray = [" "];
 
-       
+
         game2();
-      
-        
+
+
     }
 
     // this is the lose code
@@ -618,14 +648,19 @@ if (word == "maria" && userGuess !== "m") {
     if (guessesLeft2 == "0") {
 
 
-        console.log("you have lost")
-    
+        alert("you have lost")
+
+        alert("press any key for the next word :)");
+
+
+        game2();
+
     }
-   
+
     // The end of the game loop
 
 
-   
+
 
 };
 
@@ -633,630 +668,703 @@ if (word == "maria" && userGuess !== "m") {
 
 
 function game2() {
-    
+
 
     // word variable
 
 
 
-var words = ["paramore", "helena", "maria"];
-var wrongLetter = 0;
-var guessesLeft = 6;
-var k = 0
+    var words = ["paramore", "helena", "maria"];
+    var wrongLetter = 0;
+    var guessesLeft = 6;
+    var k = 0
 
-// randomly pick a word
+    // randomly pick a word
 
-var word = words[Math.floor(Math.random() * words.length)];
+    var word = words[Math.floor(Math.random() * words.length)];
 
-console.log(word);
-
-
-// array for the answer blanks 
-
-var answerArray = [];
+    console.log(word);
 
 
-for (var i = 0; i < word.length; i++) {
-    answerArray[i] = "_";
-};
+    // array for the answer blanks 
 
-// showing letters left
-var remainingLetters = word.length;
+    var answerArray = [];
 
 
-// showing pressed letters functions lmaoo
-
-function showA() {
-    var x = document.getElementById("letter1");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "A";
-    }
-};
-
-function showB() {
-    var x = document.getElementById("letter2");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "B";
-    }
-};
-
-function showC() {
-    var x = document.getElementById("letter3");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "C";
-    }
-};
-
-function showD() {
-    var x = document.getElementById("letter4");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "D";
-    }
-};
-
-function showE() {
-    var x = document.getElementById("letter5");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "E";
-    }
-};
-
-function showF() {
-    var x = document.getElementById("letter6");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "F";
-    }
-};
-
-function showG() {
-    var x = document.getElementById("letter7");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "G";
-    }
-};
-
-function showH() {
-    var x = document.getElementById("letter8");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "H";
-    }
-};
-
-function showI() {
-    var x = document.getElementById("letter9");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "I";
-    }
-};
-
-function showJ() {
-    var x = document.getElementById("letter10");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "J";
-    }
-};
-
-function showK() {
-    var x = document.getElementById("letter11");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "K";
-    }
-};
-
-function showL() {
-    var x = document.getElementById("letter12");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "L";
-    }
-};
-
-function showM() {
-    var x = document.getElementById("letter13");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "M";
-    }
-};
-
-function showN() {
-    var x = document.getElementById("letter14");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "N";
-    }
-};
-
-function showO() {
-    var x = document.getElementById("letter15");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "O";
-    }
-};
-
-function showP() {
-    var x = document.getElementById("letter16");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "P";
-    }
-};
-
-function showQ() {
-    var x = document.getElementById("letter17");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "Q";
-    }
-};
-
-function showR() {
-    var x = document.getElementById("letter18");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "R";
-    }
-};
-
-function showS() {
-    var x = document.getElementById("letter19");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "S";
-    }
-};
-
-function showT() {
-    var x = document.getElementById("letter20");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "T";
-    }
-};
-
-function showU() {
-    var x = document.getElementById("letter21");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "U";
-    }
-};
-
-function showV() {
-    var x = document.getElementById("letter22");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "V";
-    }
-};
-
-function showW() {
-    var x = document.getElementById("letter23");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "W";
-    }
-};
-
-function showX() {
-    var x = document.getElementById("letter24");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "X";
-    }
-};
-
-function showY() {
-    var x = document.getElementById("letter25");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "Y";
-    }
-};
-
-function showZ() {
-    var x = document.getElementById("letter26");
-    if (x.innerHTML === " ") {
-        x.innerHTML = " ";
-    } else {
-        x.innerHTML = "Z";
-    }
-};
-
-
-
-
-
-//key presses
-
-document.onkeyup = function (event) {
-
-
-
-    var userGuess = event.key;
-
-    console.log(wins);
-    
-    //calling function to show letters lol
-
-    if (userGuess == "a") {
-
-        showA();
-
+    for (var i = 0; i < word.length; i++) {
+        answerArray[i] = "_";
     };
 
-    if (userGuess == "b") {
+    // showing letters left
+    var remainingLetters = word.length;
 
-        showB();
 
+    // showing pressed letters functions lmaoo
+
+    function showA() {
+        var x = document.getElementById("letter1");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "A";
+        }
     };
 
-    if (userGuess == "c") {
-
-        showC();
-
+    function showB() {
+        var x = document.getElementById("letter2");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "B";
+        }
     };
 
-    if (userGuess == "d") {
-
-        showD();
-
+    function showC() {
+        var x = document.getElementById("letter3");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "C";
+        }
     };
 
-    if (userGuess == "e") {
-
-        showE();
-
+    function showD() {
+        var x = document.getElementById("letter4");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "D";
+        }
     };
 
-    if (userGuess == "f") {
-
-        showF();
-
+    function showE() {
+        var x = document.getElementById("letter5");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "E";
+        }
     };
 
-    if (userGuess == "g") {
-
-        showG();
-
+    function showF() {
+        var x = document.getElementById("letter6");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "F";
+        }
     };
 
-    if (userGuess == "h") {
-
-        showH();
-
+    function showG() {
+        var x = document.getElementById("letter7");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "G";
+        }
     };
 
-    if (userGuess == "i") {
-
-        showI();
-
+    function showH() {
+        var x = document.getElementById("letter8");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "H";
+        }
     };
 
-    if (userGuess == "j") {
-
-        showJ();
-
+    function showI() {
+        var x = document.getElementById("letter9");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "I";
+        }
     };
 
-    if (userGuess == "k") {
-
-        showK();
-
+    function showJ() {
+        var x = document.getElementById("letter10");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "J";
+        }
     };
 
-    if (userGuess == "l") {
-
-        showL();
-
+    function showK() {
+        var x = document.getElementById("letter11");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "K";
+        }
     };
 
-    if (userGuess == "m") {
-
-        showM();
-
+    function showL() {
+        var x = document.getElementById("letter12");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "L";
+        }
     };
 
-    if (userGuess == "n") {
-
-        showN();
-
+    function showM() {
+        var x = document.getElementById("letter13");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "M";
+        }
     };
 
-    if (userGuess == "o") {
-
-        showO();
-
+    function showN() {
+        var x = document.getElementById("letter14");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "N";
+        }
     };
 
-    if (userGuess == "p") {
-
-        showP();
-
+    function showO() {
+        var x = document.getElementById("letter15");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "O";
+        }
     };
 
-    if (userGuess == "q") {
-
-        showQ();
-
+    function showP() {
+        var x = document.getElementById("letter16");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "P";
+        }
     };
 
-    if (userGuess == "r") {
-
-        showR();
-
+    function showQ() {
+        var x = document.getElementById("letter17");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "Q";
+        }
     };
 
-    if (userGuess == "s") {
-
-        showS();
-
+    function showR() {
+        var x = document.getElementById("letter18");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "R";
+        }
     };
 
-    if (userGuess == "t") {
-
-        showT();
-
+    function showS() {
+        var x = document.getElementById("letter19");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "S";
+        }
     };
 
-    if (userGuess == "u") {
-
-        showU();
-
+    function showT() {
+        var x = document.getElementById("letter20");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "T";
+        }
     };
 
-    if (userGuess == "v") {
-
-        showV();
-
+    function showU() {
+        var x = document.getElementById("letter21");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "U";
+        }
     };
 
-    if (userGuess == "w") {
-
-        showW();
-
+    function showV() {
+        var x = document.getElementById("letter22");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "V";
+        }
     };
 
-    if (userGuess == "x") {
-
-        showX();
-
+    function showW() {
+        var x = document.getElementById("letter23");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "W";
+        }
     };
 
-    if (userGuess == "y") {
-
-        showY();
-
+    function showX() {
+        var x = document.getElementById("letter24");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "X";
+        }
     };
 
-    if (userGuess == "z") {
+    function showY() {
+        var x = document.getElementById("letter25");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "Y";
+        }
+    };
 
-        showZ();
-
+    function showZ() {
+        var x = document.getElementById("letter26");
+        if (x.innerHTML === " ") {
+            x.innerHTML = " ";
+        } else {
+            x.innerHTML = "Z";
+        }
     };
 
 
 
 
 
-    // Get a guess from the player
+    //key presses
+
+    document.onkeyup = function (event) {
 
 
-    
+
+        var userGuess = event.key.toLowerCase();
+
+        console.log(wins);
+
+        //calling function to show letters lol
+
+        if (userGuess == "a") {
+
+            showA();
+
+        };
+
+        if (userGuess == "b") {
+
+            showB();
+
+        };
+
+        if (userGuess == "c") {
+
+            showC();
+
+        };
+
+        if (userGuess == "d") {
+
+            showD();
+
+        };
+
+        if (userGuess == "e") {
+
+            showE();
+
+        };
+
+        if (userGuess == "f") {
+
+            showF();
+
+        };
+
+        if (userGuess == "g") {
+
+            showG();
+
+        };
+
+        if (userGuess == "h") {
+
+            showH();
+
+        };
+
+        if (userGuess == "i") {
+
+            showI();
+
+        };
+
+        if (userGuess == "j") {
+
+            showJ();
+
+        };
+
+        if (userGuess == "k") {
+
+            showK();
+
+        };
+
+        if (userGuess == "l") {
+
+            showL();
+
+        };
+
+        if (userGuess == "m") {
+
+            showM();
+
+        };
+
+        if (userGuess == "n") {
+
+            showN();
+
+        };
+
+        if (userGuess == "o") {
+
+            showO();
+
+        };
+
+        if (userGuess == "p") {
+
+            showP();
+
+        };
+
+        if (userGuess == "q") {
+
+            showQ();
+
+        };
+
+        if (userGuess == "r") {
+
+            showR();
+
+        };
+
+        if (userGuess == "s") {
+
+            showS();
+
+        };
+
+        if (userGuess == "t") {
+
+            showT();
+
+        };
+
+        if (userGuess == "u") {
+
+            showU();
+
+        };
+
+        if (userGuess == "v") {
+
+            showV();
+
+        };
+
+        if (userGuess == "w") {
+
+            showW();
+
+        };
+
+        if (userGuess == "x") {
+
+            showX();
+
+        };
+
+        if (userGuess == "y") {
+
+            showY();
+
+        };
+
+        if (userGuess == "z") {
+
+            showZ();
+
+        };
+
+
+
+
+
+        // Get a guess from the player
+
+
+
 
         for (var j = 0; j < word.length; j++) {
-             if (word[j] === userGuess) {
-             answerArray[j] = userGuess;
-             remainingLetters--;
-             }
+            if (word[j] === userGuess) {
+                answerArray[j] = userGuess;
+                remainingLetters--;
             }
-    
-
-    
-   // decrementing guesses for wrong letter omg the || isnt working im going crazy 
-
-   // for paramore
-
-   
-
- if (word == "paramore" && userGuess !== "p") {
-    guessesLeft--;
-  }
- 
-
-  if (word == "paramore" && userGuess == "a") {
-    guessesLeft++;
-  }
- 
-  if (word == "paramore" && userGuess == "r") {
-    guessesLeft++;
-  }
-    
-  if (word == "paramore" && userGuess == "m") {
-    guessesLeft++;
-  }
-
-  if (word == "paramore" && userGuess == "o") {
-    guessesLeft++;
-  }
-    
-  if (word == "paramore" && userGuess == "e") {
-    guessesLeft++;
-  }
-    
-// for helena
-
-  if (word == "helena" && userGuess !== "h") {
-    guessesLeft--;
-  }
- 
-  if (word == "helena" && userGuess == "e") {
-    guessesLeft++;
-  }
-
-  if (word == "helena" && userGuess == "l") {
-    guessesLeft++;
-  }
-
-  if (word == "helena" && userGuess == "n") {
-    guessesLeft++;
-  }
-
-  if (word == "helena" && userGuess == "a") {
-    guessesLeft++;
-  }
-
-
-// maria letters
-
-if (word == "maria" && userGuess !== "m") {
-    guessesLeft--;
-  }
-
-
-  if (word == "maria" && userGuess == "a") {
-    guessesLeft++;
-  }
-
-
-  if (word == "maria" && userGuess == "r") {
-    guessesLeft++;
-  }
-
-
-  if (word == "maria" && userGuess == "i") {
-    guessesLeft++;
-  }
-
-  var guessesLeft2 = guessesLeft.toString();
-
-
-    console.log(guessesLeft2);
- 
+        }
 
 
 
+        // decrementing guesses for wrong letter omg the || isnt working im going crazy 
 
-    // pushing the guesses left
-    document.getElementById("guessesLeftDiv").innerHTML = "guesses left: " + guessesLeft;;
-
-    
-   
-    
-    
+        // for paramore
 
 
-// showing hints
-    if (word == "paramore") {
+
+        if (word == "paramore" && userGuess !== "p") {
+            guessesLeft--;
+        }
 
 
-        document.getElementById("hint").innerHTML = "hint: past twlight banger / current feminist powerhouse";
+        if (word == "paramore" && userGuess == "a") {
+            guessesLeft++;
+        }
+
+        if (word == "paramore" && userGuess == "r") {
+            guessesLeft++;
+        }
+
+        if (word == "paramore" && userGuess == "m") {
+            guessesLeft++;
+        }
+
+        if (word == "paramore" && userGuess == "o") {
+            guessesLeft++;
+        }
+
+        if (word == "paramore" && userGuess == "e") {
+            guessesLeft++;
+        }
+
+        // for helena
+
+        if (word == "helena" && userGuess !== "h") {
+            guessesLeft--;
+        }
+
+        if (word == "helena" && userGuess == "e") {
+            guessesLeft++;
+        }
+
+        if (word == "helena" && userGuess == "l") {
+            guessesLeft++;
+        }
+
+        if (word == "helena" && userGuess == "n") {
+            guessesLeft++;
+        }
+
+        if (word == "helena" && userGuess == "a") {
+            guessesLeft++;
+        }
+
+
+        // maria letters
+
+        if (word == "maria" && userGuess !== "m") {
+            guessesLeft--;
+        }
+
+
+        if (word == "maria" && userGuess == "a") {
+            guessesLeft++;
+        }
+
+
+        if (word == "maria" && userGuess == "r") {
+            guessesLeft++;
+        }
+
+
+        if (word == "maria" && userGuess == "i") {
+            guessesLeft++;
+        }
+
+        var guessesLeft2 = guessesLeft.toString();
+
+
+        console.log(guessesLeft2);
+
+
+
+
+
+        // pushing the guesses left
+        document.getElementById("guessesLeftDiv").innerHTML = "guesses left: " + guessesLeft;;
+
+
+
+
+
+
+
+        // showing hints
+        if (word == "paramore") {
+
+
+            document.getElementById("hint").innerHTML = "hint: past twlight banger / current feminist powerhouse";
+
+        };
+
+        if (word == "helena") {
+
+
+            document.getElementById("hint").innerHTML = "hint: so long and goodnight";
+
+        };
+
+        if (word == "maria") {
+
+
+            document.getElementById("hint").innerHTML = "hint: count her in";
+
+        };
+
+
+
+        console.log(answerArray.join(" "));
+
+        var filledSpaces = answerArray.join(" ");
+
+        //showingthe word variable
+
+        document.getElementById("theWord").innerHTML = filledSpaces;
+
+
+
+        // when you win its gonna refresh for now. i know i can make it just move up a variable through a loop too but i wanted to test this refresh thing out
+
+        if (filledSpaces == "p a r a m o r e" || filledSpaces == "h e l e n a" || filledSpaces == "m a r i a") {
+
+
+            alert("correct! the word was " + word);
+
+            alert("press any key for the next word :)");
+
+            document.getElementById("letter1").innerHTML = " ";
+            document.getElementById("letter2").innerHTML = " ";
+            document.getElementById("letter4").innerHTML = " ";
+            document.getElementById("letter5").innerHTML = " ";
+            document.getElementById("letter6").innerHTML = " ";
+            document.getElementById("letter7").innerHTML = " ";
+            document.getElementById("letter8").innerHTML = " ";
+            document.getElementById("letter9").innerHTML = " ";
+            document.getElementById("letter10").innerHTML = " ";
+            document.getElementById("letter11").innerHTML = " ";
+            document.getElementById("letter12").innerHTML = " ";
+            document.getElementById("letter13").innerHTML = " ";
+            document.getElementById("letter14").innerHTML = " ";
+            document.getElementById("letter15").innerHTML = " ";
+            document.getElementById("letter16").innerHTML = " ";
+            document.getElementById("letter17").innerHTML = " ";
+            document.getElementById("letter18").innerHTML = " ";
+            document.getElementById("letter19").innerHTML = " ";
+            document.getElementById("letter20").innerHTML = " ";
+            document.getElementById("letter21").innerHTML = " ";
+            document.getElementById("letter22").innerHTML = " ";
+            document.getElementById("letter23").innerHTML = " ";
+            document.getElementById("letter24").innerHTML = " ";
+            document.getElementById("letter25").innerHTML = " ";
+            document.getElementById("letter26").innerHTML = " ";
+
+
+            wins++
+
+            document.getElementById("winsDiv").innerHTML = "wins: " + wins;;
+
+            // javascript: timedRefresh(5000);
+
+            // clear the word?
+
+            answerArray = [" "];
+
+
+            game2();
+
+
+        }
+
+        // this is the lose code
+
+        if (guessesLeft2 == "0") {
+
+            // im making alerts so people know what to do more
+            
+            alert("you have lost")
+
+            alert("press any key for the next word :)");
+
+            game2();
+
+
+        }
+
+        // The end of the game loop
+
+
+
 
     };
 
-    if (word == "helena") {
-
-
-        document.getElementById("hint").innerHTML = "hint: so long and goodnight";
-
-    };
-
-    if (word == "maria") {
-
-
-        document.getElementById("hint").innerHTML = "hint: count her in";
-
-    };
-    
-
-
-    console.log(answerArray.join(" "));
-
-    var filledSpaces = answerArray.join(" ");
-
-    //showingthe word variable
-
-    document.getElementById("theWord").innerHTML = filledSpaces;
-
-   
-
-// when you win its gonna refresh for now. i know i can make it just move up a variable through a loop too but i wanted to test this refresh thing out
-
-    if (filledSpaces == "p a r a m o r e" || filledSpaces == "h e l e n a" || filledSpaces == "m a r i a"  ) {
-
-
-        alert("correct! the word was " + word);
-
-        alert("press any key for the next word :)");
-
-        wins++
-
-        document.getElementById("winsDiv").innerHTML = "wins: " + wins;;
-
-        // javascript: timedRefresh(5000);
-
-        // clear the word?
-
-        answerArray = [" "];
-
-       
-        game2();
-      
-        
-    }
-
-    // this is the lose code
-
-    if (guessesLeft2 == "0") {
-
-
-        console.log("you have lost")
-    
-    }
-   
-    // The end of the game loop
-
-
-   
 
 };
 
 
-};
+
+
+
+
+
+
+
+
+
+
+// this is code to clear the divs with letters 
+
+// document.getElementById("letter1").innerHTML = " " ;
+// document.getElementById("letter2").innerHTML = " " ;
+// document.getElementById("letter4").innerHTML = " " ;
+// document.getElementById("letter5").innerHTML = " " ;
+// document.getElementById("letter6").innerHTML = " " ;
+// document.getElementById("letter7").innerHTML = " " ;
+// document.getElementById("letter8").innerHTML = " " ;
+// document.getElementById("letter9").innerHTML = " " ;
+// document.getElementById("letter10").innerHTML = " " ;
+// document.getElementById("letter11").innerHTML = " " ;
+// document.getElementById("letter12").innerHTML = " " ;
+// document.getElementById("letter13").innerHTML = " " ;
+// document.getElementById("letter14").innerHTML = " " ;
+// document.getElementById("letter15").innerHTML = " " ;
+// document.getElementById("letter16").innerHTML = " " ;
+// document.getElementById("letter17").innerHTML = " " ;
+// document.getElementById("letter18").innerHTML = " " ;
+// document.getElementById("letter19").innerHTML = " " ;
+// document.getElementById("letter20").innerHTML = " " ;
+// document.getElementById("letter21").innerHTML = " " ;
+// document.getElementById("letter22").innerHTML = " " ;
+// document.getElementById("letter23").innerHTML = " " ;
+// document.getElementById("letter24").innerHTML = " " ;
+// document.getElementById("letter25").innerHTML = " " ;
+// document.getElementById("letter26").innerHTML = " " ;
+
