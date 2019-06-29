@@ -1,6 +1,8 @@
 # Word-Guess-Game
 Javascript powered word guess game
 
+live game demo: https://avimkabir.github.io/Word-Guess-Game/
+
 * PSEUDOCODE
 
 * gotta tell what letter people are choosing with the keyup function
