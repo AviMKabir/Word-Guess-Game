@@ -7,6 +7,13 @@ function timedRefresh(timeoutPeriod) {
 
 // jk i changed the code to loop to a random word each time 
 
+
+
+
+// so i understand there are gonna be random words and it might double, it would make more sense if i added more words
+
+// it would probably be better to scroll through the aerray but then its the same game each time
+
 // word variable
 
 
@@ -16,6 +23,7 @@ var wrongLetter = 0;
 var guessesLeft = 6;
 var k = 0;
 var wins = 0;
+var wrongGuess = [];
 // randomly pick a word
 
 var word = words[Math.floor(Math.random() * words.length)];
@@ -458,8 +466,13 @@ document.onkeyup = function (event) {
             answerArray[j] = userGuess;
             remainingLetters--;
         }
+
+        
     }
 
+
+    
+    
 
 
     // decrementing guesses for wrong letter omg the || isnt working im going crazy 
@@ -470,8 +483,12 @@ document.onkeyup = function (event) {
 
     if (word == "paramore" && userGuess !== "p") {
         guessesLeft--;
-    }
 
+     
+
+       
+    }
+   
 
     if (word == "paramore" && userGuess == "a") {
         guessesLeft++;
@@ -598,34 +615,31 @@ document.onkeyup = function (event) {
 
         alert("press any key for the next word :)");
 
-        // emptying the letters oh man
-
-        document.getElementById("letter1").innerHTML = " ";
-        document.getElementById("letter2").innerHTML = " ";
-        document.getElementById("letter4").innerHTML = " ";
-        document.getElementById("letter5").innerHTML = " ";
-        document.getElementById("letter6").innerHTML = " ";
-        document.getElementById("letter7").innerHTML = " ";
-        document.getElementById("letter8").innerHTML = " ";
-        document.getElementById("letter9").innerHTML = " ";
-        document.getElementById("letter10").innerHTML = " ";
-        document.getElementById("letter11").innerHTML = " ";
-        document.getElementById("letter12").innerHTML = " ";
-        document.getElementById("letter13").innerHTML = " ";
-        document.getElementById("letter14").innerHTML = " ";
-        document.getElementById("letter15").innerHTML = " ";
-        document.getElementById("letter16").innerHTML = " ";
-        document.getElementById("letter17").innerHTML = " ";
-        document.getElementById("letter18").innerHTML = " ";
-        document.getElementById("letter19").innerHTML = " ";
-        document.getElementById("letter20").innerHTML = " ";
-        document.getElementById("letter21").innerHTML = " ";
-        document.getElementById("letter22").innerHTML = " ";
-        document.getElementById("letter23").innerHTML = " ";
-        document.getElementById("letter24").innerHTML = " ";
-        document.getElementById("letter25").innerHTML = " ";
-        document.getElementById("letter26").innerHTML = " ";
-
+     document.getElementById("letter1").innerHTML = "   ";
+document.getElementById("letter2").innerHTML = "   ";
+document.getElementById("letter4").innerHTML = "   ";
+document.getElementById("letter5").innerHTML = "   ";
+document.getElementById("letter6").innerHTML = "    ";
+document.getElementById("letter7").innerHTML = "    ";
+document.getElementById("letter8").innerHTML = "    ";
+document.getElementById("letter9").innerHTML = "    ";
+document.getElementById("letter10").innerHTML = "   ";
+document.getElementById("letter11").innerHTML = "   ";
+document.getElementById("letter12").innerHTML = "   ";
+document.getElementById("letter13").innerHTML = "   ";
+document.getElementById("letter14").innerHTML = "   ";
+document.getElementById("letter15").innerHTML = "   ";
+document.getElementById("letter16").innerHTML = "   ";
+document.getElementById("letter17").innerHTML = "   ";
+document.getElementById("letter18").innerHTML = "   ";
+document.getElementById("letter19").innerHTML = "   ";
+document.getElementById("letter20").innerHTML = "   ";
+document.getElementById("letter21").innerHTML = "   ";
+document.getElementById("letter22").innerHTML = "   ";
+document.getElementById("letter23").innerHTML = "   ";
+document.getElementById("letter24").innerHTML = "   ";
+document.getElementById("letter25").innerHTML = "   ";
+document.getElementById("letter26").innerHTML = "   ";
 
         wins++;
 
@@ -652,7 +666,33 @@ document.onkeyup = function (event) {
 
         alert("press any key for the next word :)");
 
+        document.getElementById("letter1").innerHTML = "   ";
+        document.getElementById("letter2").innerHTML = "   ";
+        document.getElementById("letter4").innerHTML = "   ";
+        document.getElementById("letter5").innerHTML = "   ";
+        document.getElementById("letter6").innerHTML = "    ";
+        document.getElementById("letter7").innerHTML = "    ";
+        document.getElementById("letter8").innerHTML = "    ";
+        document.getElementById("letter9").innerHTML = "    ";
+        document.getElementById("letter10").innerHTML = "   ";
+        document.getElementById("letter11").innerHTML = "   ";
+        document.getElementById("letter12").innerHTML = "   ";
+        document.getElementById("letter13").innerHTML = "   ";
+        document.getElementById("letter14").innerHTML = "   ";
+        document.getElementById("letter15").innerHTML = "   ";
+        document.getElementById("letter16").innerHTML = "   ";
+        document.getElementById("letter17").innerHTML = "   ";
+        document.getElementById("letter18").innerHTML = "   ";
+        document.getElementById("letter19").innerHTML = "   ";
+        document.getElementById("letter20").innerHTML = "   ";
+        document.getElementById("letter21").innerHTML = "   ";
+        document.getElementById("letter22").innerHTML = "   ";
+        document.getElementById("letter23").innerHTML = "   ";
+        document.getElementById("letter24").innerHTML = "   ";
+        document.getElementById("letter25").innerHTML = "   ";
+        document.getElementById("letter26").innerHTML = "   ";
 
+       
         game2();
 
     }
@@ -1261,32 +1301,32 @@ function game2() {
 
             alert("press any key for the next word :)");
 
-            document.getElementById("letter1").innerHTML = " ";
-            document.getElementById("letter2").innerHTML = " ";
-            document.getElementById("letter4").innerHTML = " ";
-            document.getElementById("letter5").innerHTML = " ";
-            document.getElementById("letter6").innerHTML = " ";
-            document.getElementById("letter7").innerHTML = " ";
-            document.getElementById("letter8").innerHTML = " ";
-            document.getElementById("letter9").innerHTML = " ";
-            document.getElementById("letter10").innerHTML = " ";
-            document.getElementById("letter11").innerHTML = " ";
-            document.getElementById("letter12").innerHTML = " ";
-            document.getElementById("letter13").innerHTML = " ";
-            document.getElementById("letter14").innerHTML = " ";
-            document.getElementById("letter15").innerHTML = " ";
-            document.getElementById("letter16").innerHTML = " ";
-            document.getElementById("letter17").innerHTML = " ";
-            document.getElementById("letter18").innerHTML = " ";
-            document.getElementById("letter19").innerHTML = " ";
-            document.getElementById("letter20").innerHTML = " ";
-            document.getElementById("letter21").innerHTML = " ";
-            document.getElementById("letter22").innerHTML = " ";
-            document.getElementById("letter23").innerHTML = " ";
-            document.getElementById("letter24").innerHTML = " ";
-            document.getElementById("letter25").innerHTML = " ";
-            document.getElementById("letter26").innerHTML = " ";
-
+            
+            document.getElementById("letter1").innerHTML = "   ";
+            document.getElementById("letter2").innerHTML = "   ";
+            document.getElementById("letter4").innerHTML = "   ";
+            document.getElementById("letter5").innerHTML = "   ";
+            document.getElementById("letter6").innerHTML = "    ";
+            document.getElementById("letter7").innerHTML = "    ";
+            document.getElementById("letter8").innerHTML = "    ";
+            document.getElementById("letter9").innerHTML = "    ";
+            document.getElementById("letter10").innerHTML = "   ";
+            document.getElementById("letter11").innerHTML = "   ";
+            document.getElementById("letter12").innerHTML = "   ";
+            document.getElementById("letter13").innerHTML = "   ";
+            document.getElementById("letter14").innerHTML = "   ";
+            document.getElementById("letter15").innerHTML = "   ";
+            document.getElementById("letter16").innerHTML = "   ";
+            document.getElementById("letter17").innerHTML = "   ";
+            document.getElementById("letter18").innerHTML = "   ";
+            document.getElementById("letter19").innerHTML = "   ";
+            document.getElementById("letter20").innerHTML = "   ";
+            document.getElementById("letter21").innerHTML = "   ";
+            document.getElementById("letter22").innerHTML = "   ";
+            document.getElementById("letter23").innerHTML = "   ";
+            document.getElementById("letter24").innerHTML = "   ";
+            document.getElementById("letter25").innerHTML = "   ";
+            document.getElementById("letter26").innerHTML = "   ";
 
             wins++
 
@@ -1313,6 +1353,32 @@ function game2() {
             alert("you have lost")
 
             alert("press any key for the next word :)");
+
+            document.getElementById("letter1").innerHTML = "   ";
+            document.getElementById("letter2").innerHTML = "   ";
+            document.getElementById("letter4").innerHTML = "   ";
+            document.getElementById("letter5").innerHTML = "   ";
+            document.getElementById("letter6").innerHTML = "    ";
+            document.getElementById("letter7").innerHTML = "    ";
+            document.getElementById("letter8").innerHTML = "    ";
+            document.getElementById("letter9").innerHTML = "    ";
+            document.getElementById("letter10").innerHTML = "   ";
+            document.getElementById("letter11").innerHTML = "   ";
+            document.getElementById("letter12").innerHTML = "   ";
+            document.getElementById("letter13").innerHTML = "   ";
+            document.getElementById("letter14").innerHTML = "   ";
+            document.getElementById("letter15").innerHTML = "   ";
+            document.getElementById("letter16").innerHTML = "   ";
+            document.getElementById("letter17").innerHTML = "   ";
+            document.getElementById("letter18").innerHTML = "   ";
+            document.getElementById("letter19").innerHTML = "   ";
+            document.getElementById("letter20").innerHTML = "   ";
+            document.getElementById("letter21").innerHTML = "   ";
+            document.getElementById("letter22").innerHTML = "   ";
+            document.getElementById("letter23").innerHTML = "   ";
+            document.getElementById("letter24").innerHTML = "   ";
+            document.getElementById("letter25").innerHTML = "   ";
+            document.getElementById("letter26").innerHTML = "   ";
 
             game2();
 
@@ -1368,3 +1434,34 @@ function game2() {
 // document.getElementById("letter25").innerHTML = " " ;
 // document.getElementById("letter26").innerHTML = " " ;
 
+// function clearGuesses() {
+
+//     // emptying the letters oh man
+
+// document.getElementById("letter1").innerHTML = " ";
+// document.getElementById("letter2").innerHTML = " ";
+// document.getElementById("letter4").innerHTML = " ";
+// document.getElementById("letter5").innerHTML = " ";
+// document.getElementById("letter6").innerHTML = " ";
+// document.getElementById("letter7").innerHTML = " ";
+// document.getElementById("letter8").innerHTML = " ";
+// document.getElementById("letter9").innerHTML = " ";
+// document.getElementById("letter10").innerHTML = " ";
+// document.getElementById("letter11").innerHTML = " ";
+// document.getElementById("letter12").innerHTML = " ";
+// document.getElementById("letter13").innerHTML = " ";
+// document.getElementById("letter14").innerHTML = " ";
+// document.getElementById("letter15").innerHTML = " ";
+// document.getElementById("letter16").innerHTML = " ";
+// document.getElementById("letter17").innerHTML = " ";
+// document.getElementById("letter18").innerHTML = " ";
+// document.getElementById("letter19").innerHTML = " ";
+// document.getElementById("letter20").innerHTML = " ";
+// document.getElementById("letter21").innerHTML = " ";
+// document.getElementById("letter22").innerHTML = " ";
+// document.getElementById("letter23").innerHTML = " ";
+// document.getElementById("letter24").innerHTML = " ";
+// document.getElementById("letter25").innerHTML = " ";
+// document.getElementById("letter26").innerHTML = " ";
+    
+// };
