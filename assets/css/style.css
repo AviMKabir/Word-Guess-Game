@@ -1,5 +1,14 @@
 body {
 
     font-family: 'Barriecito', cursive;
+    background-image: url("https://raw.githubusercontent.com/AviMKabir/Word-Guess-Game/master/assets/images/emo_collage_by_whi4576s_d4clpnk-fullview.jpg");
+}
+
+.jumbotron,
+.card {
+
+
+background-color: rgba(255, 67, 224, 0.911);
+
 
 }
