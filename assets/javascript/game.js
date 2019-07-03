@@ -16,6 +16,8 @@ function timedRefresh(timeoutPeriod) {
 
 // word variable
 
+// words are "paramore" , "helena", "maria"
+
 
 
 var words = ["paramore", "helena", "maria"];
