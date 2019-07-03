@@ -664,7 +664,7 @@ document.getElementById("letter26").innerHTML = "   ";
     if (guessesLeft2 == "0") {
 
 
-        alert("you have lost")
+        alert("incorrect! the word was " + word)
 
         alert("press any key for the next word :)");
 
@@ -1352,7 +1352,7 @@ function game2() {
 
             // im making alerts so people know what to do more
             
-            alert("you have lost")
+            alert("incorrect! the word was " + word)
 
             alert("press any key for the next word :)");
 
